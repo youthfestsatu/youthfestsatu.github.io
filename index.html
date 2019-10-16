@@ -57,6 +57,15 @@
 	
  
   function generate() {
+    if(!document.getElementById('nama').value){
+		alert("Masukan Nama");
+		document.getElementById('nama').focus();
+		return;
+	} else if(!document.getElementById('namasekolah').value){
+		alert("Masukan Sekolah/Kampus/Kantor Kamu");
+		document.getElementById('namasekolah').focus();
+		return;
+	}
   var message = 'https://docs.google.com/forms/d/e/1FAIpQLScjDUopQzYa8ng74eNlWOZq9m1WBE1mRV5IRqxCIYfb2GsVvQ/viewform?usp=pp_url&entry.2080694338=' +
     document.getElementById('nama').value +
     '&entry.927297386=' +
