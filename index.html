@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/qrcode.js"></script>
+</head>
+  <body>
+  <div class="login-page">
+    <div class="form">
+        <IMG SRC="logo.png" ALT="some text"  class="center">
+    <form class="qrcode-form">
+        <p>Selamat <a id="namae"href="#"></a>,kamu sudah melakukan registrasi untuk ikut dalam acara Youth Festifal SATU. 
+        Silahkan Screenshot QR Code dibawah ini untuk dapat kamu tunjukan ke Usher pada saat Check-In </p>
+        <div id="qrcode" class="qrcodepos"></div><br>
+        <button value="Refresh Page" onClick="window.location.reload();">Daftar lagi</button>
+    </form>
+    <form>
+    Nama : <br> <input type="text" id="nama" class="text"><br>
+    Gender : <br>
+    <input type="radio" id="gender" name="gender" value="Lelaki+Sejati" class="radiobtn"> Lelaki Sejati<br>
+    <input type="radio" id="gender" name="gender" value="Perempuan+Bijak" class="radiobtn"> Perempuan Bijak<br>
+    Tingkat : <br>
+    <input type="radio" id="tingkat" name="tingkat" value="SD" class="radiobtn"> SD <br>
+    <input type="radio" id="tingkat" name="tingkat" value="SMP" class="radiobtn"> SMP <br>
+    <input type="radio" id="tingkat" name="tingkat" value="SMA" class="radiobtn"> SMA/Sederajat <br>
+    <input type="radio" id="tingkat" name="tingkat" value="Mahasiswa" class="radiobtn"> Kuliah <br>
+    <input type="radio" id="tingkat" name="tingkat" value="Bekerja" class="radiobtn"> Bekerja <br>
+    Nama Sekolah/Kampus/Kantor : <br><input type="text" id="namasekolah" class="text"><br>
+    Wilayah Sekolah/Kampus/Kantor : <br>
+    <input type="radio" id="wilayah" name="wilayah" value="Cijantung" class="radiobtn"> Cijantung <br>
+    <input type="radio" id="wilayah" name="wilayah" value="Cipayung" class="radiobtn"> Cipayung <br>
+    <input type="radio" id="wilayah" name="wilayah" value="Kampung+Melayu" class="radiobtn"> Kampung Melayu <br>
+    <input type="radio" id="wilayah" name="wilayah" value="Pondok+Gede" class="radiobtn"> Pondok Gede <br>
+    <input type="radio" id="wilayah" name="wilayah" value="Cililitan" class="radiobtn"> Cililitan <br>
+    <input type="radio" id="wilayah" name="wilayah" value="Wilayah+Lain" class="radiobtn"> Wilayah Lain : ( tuliskan dibawah ) <br>
+    <input type="text" id="lain" class="text"><br>
+    Nomor HP/WA : <br><input type="text" id="HP" class="text"><br>
+    Akun IG : <br><input type="text" id="ig" class="text"><br>
+    Komunitas apa sih yang kamu pengen ? <br>
+    <!-- <input type="text" id="komunitas" class="textlebar"> -->
+    <textarea name="text" rows="14" cols="10" wrap="soft" id="komunitas" class="textlebar"> </textarea>
+    <button id="submit" class="message" type="submit">submit</button>
+  </form>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  $("#submit").click(function(e){
+    e.preventDefault();
+    generate();
+    return false;  
+  })
+
+	
+ 
+  function generate() {
+  var message = 'https://docs.google.com/forms/d/e/1FAIpQLScjDUopQzYa8ng74eNlWOZq9m1WBE1mRV5IRqxCIYfb2GsVvQ/viewform?usp=pp_url&entry.2080694338=' +
+    document.getElementById('nama').value +
+    '&entry.927297386=' +
+    $("#gender:checked").val() +
+    '&entry.1695096350=' +
+    $("#tingkat:checked").val() +
+    '&entry.511033029=' +
+    document.getElementById('namasekolah').value +
+    '&entry.974933260=' +
+    $("#wilayah:checked").val() +
+    '&entry.320517256=' +
+    document.getElementById('lain').value +
+    '&entry.636055167=' +
+    document.getElementById('HP').value +
+    '&entry.1468104517=' +
+    document.getElementById('ig').value +
+    '&entry.1979673076=' +
+    document.getElementById('komunitas').value +
+    '|';
+    var message2 = 'https://docs.google.com/forms/d/e/1FAIpQLSeszQQnSJia_d0VjgsvxGZuSQECT_FCmbdzkRWCEH1EmZHbgQ/formResponse?usp=pp_url&entry.856302031=' +
+    document.getElementById('nama').value +
+    '&entry.526760044=' +
+    $("#gender:checked").val() +
+    '&entry.958196159=' +
+    $("#tingkat:checked").val() +
+    '&entry.737382756=' +
+    document.getElementById('namasekolah').value +
+    '&entry.1629132411=' +
+    $("#wilayah:checked").val() +
+    '&entry.482816157=' +
+    document.getElementById('lain').value +
+    '&entry.529615306=' +
+    document.getElementById('HP').value +
+    '&entry.2016636261=' +
+    document.getElementById('ig').value +
+    '&entry.1821678247=' +
+    document.getElementById('komunitas').value +
+    '&submit=Submit';
+  document.getElementById('namae').innerHTML = document.getElementById('nama').value;
+	var wnd = window.open(message2);
+    wnd.close();
+	// Create QRCode Object
+  new QRCode(document.getElementById("qrcode"), message);
+  $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+}
+</script>
+
+
+</body>
+</html>
