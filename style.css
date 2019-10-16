@@ -102,8 +102,8 @@
 body {
   background-image: url('bg.jpg');
   /* background-repeat: no-repeat; */
-  background-attachment: fixed;
-  background-position: center;
+  /* background-attachment: fixed; */
+  /* background-position: center; */
   background-size: cover;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
