@@ -110,6 +110,7 @@
 	// Create QRCode Object
   new QRCode(document.getElementById("qrcode"), message);
   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+  $('html,body').scrollTop(0);
 }
 </script>
 
