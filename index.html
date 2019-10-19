@@ -85,28 +85,28 @@
     '&entry.1979673076=' +
     document.getElementById('komunitas').value +
     '|';
-    var message2 = 'https://docs.google.com/forms/d/e/1FAIpQLSeszQQnSJia_d0VjgsvxGZuSQECT_FCmbdzkRWCEH1EmZHbgQ/formResponse?usp=pp_url&entry.856302031=' +
-    document.getElementById('nama').value +
-    '&entry.526760044=' +
-    $("#gender:checked").val() +
-    '&entry.958196159=' +
-    $("#tingkat:checked").val() +
-    '&entry.737382756=' +
-    document.getElementById('namasekolah').value +
-    '&entry.1629132411=' +
-    $("#wilayah:checked").val() +
-    '&entry.482816157=' +
-    document.getElementById('lain').value +
-    '&entry.529615306=' +
-    document.getElementById('HP').value +
-    '&entry.2016636261=' +
-    document.getElementById('ig').value +
-    '&entry.1821678247=' +
-    document.getElementById('komunitas').value +
-    '&submit=Submit';
-  document.getElementById('namae').innerHTML = document.getElementById('nama').value;
-	var wnd = window.open(message2);
-    wnd.close();
+    // var message2 = 'https://docs.google.com/forms/d/e/1FAIpQLSeszQQnSJia_d0VjgsvxGZuSQECT_FCmbdzkRWCEH1EmZHbgQ/formResponse?usp=pp_url&entry.856302031=' +
+    // document.getElementById('nama').value +
+    // '&entry.526760044=' +
+    // $("#gender:checked").val() +
+    // '&entry.958196159=' +
+    // $("#tingkat:checked").val() +
+    // '&entry.737382756=' +
+    // document.getElementById('namasekolah').value +
+    // '&entry.1629132411=' +
+    // $("#wilayah:checked").val() +
+    // '&entry.482816157=' +
+    // document.getElementById('lain').value +
+    // '&entry.529615306=' +
+    // document.getElementById('HP').value +
+    // '&entry.2016636261=' +
+    // document.getElementById('ig').value +
+    // '&entry.1821678247=' +
+    // document.getElementById('komunitas').value +
+    // '&submit=Submit';
+  // document.getElementById('namae').innerHTML = document.getElementById('nama').value;
+	// var wnd = window.open(message2);
+  //   wnd.close();
 	// Create QRCode Object
   new QRCode(document.getElementById("qrcode"), message);
   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
